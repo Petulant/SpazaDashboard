@@ -1,0 +1,57 @@
+<mat-toolbar>
+  <div >
+    <div style="margin-left: 850%">
+      <button  mat-button class="trans"style="color:lightsalmon; transform: translateY(18px); font-size: 10pt ">REGISTER</button>
+      <button mat-button class="trans" style="color:lightsalmon;transform: translateY(18px); font-size: 10pt;"><i class="material-icons">logout</i></button>
+    </div>
+
+</div>
+</mat-toolbar>
+
+<mat-drawer-container class="example-container">
+  <mat-drawer class="sidebar" mode="side" opened>
+      <mat-nav-list>
+
+    <div class="item" routerLink="/sidebar/my-dashboard" >
+      <button mat-button class="trans" (click)="dash()">
+     <div class="fa fa-dash"><i class="material-icons">dashboard</i></div>
+     <div class="label" style="text-align: left">DASHBOARD</div>
+     </button>
+     </div>
+
+     <div class="item" routerLink="/sidebar/profile">
+      <button mat-button class="trans" (click)="profile()">
+      <div class="fa fa-user"><i class="material-icons">person</i></div>
+      <div class="label">USER PROFILE</div>
+    </button>
+    </div>
+
+
+    <div class="item" routerLink="/sidebar/table">
+      <button  mat-button class="trans" (click)="table()">
+      <div class="fa fa-table"><i class="material-icons">table_chart</i></div>
+      <div class="label">TABLE LIST</div>
+      </button>
+    </div>
+
+
+    <div class="item" routerLink="/sidebar/charts">
+      <button mat-button class="trans" (click)="chart()">
+      <div class="fa fa-chart"><i class="material-icons">bar_chart</i></div>
+      <div class="label">CHARTS</div>
+      </button>
+    </div>
+
+    <div class="item" routerLink="/sidebar/map">
+      <button mat-button class="trans" (click)="mymaps()">
+      <div class="fa fa-map"><i class="material-icons">map</i></div>
+      <div class="label">MAPS</div>
+      </button>
+    </div>
+</mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content autosize style="position: absolute;right: 0px;left: 0px;bottom: 0px;top: 0px;">
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+
+</mat-drawer-container>
