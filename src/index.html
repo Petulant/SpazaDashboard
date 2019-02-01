@@ -9,6 +9,23 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Firabase -->
+  
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAosPlPpr_9f3pHPtfEFJTQRJtY3Mz4WMM",
+        authDomain: "spazalocation.firebaseapp.com",
+        databaseURL: "https://spazalocation.firebaseio.com",
+        projectId: "spazalocation",
+        storageBucket: "spazalocation.appspot.com",
+        messagingSenderId: "476030295128"
+      };
+      firebase.initializeApp(config);
+    </script>
+  <!-- End firebase -->
 </head>
 <body>
   <app-root></app-root>
