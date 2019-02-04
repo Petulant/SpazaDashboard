@@ -12,7 +12,7 @@
   <mat-drawer class="sidebar" mode="side" opened>
       <mat-nav-list>
 
-    <div class="item" routerLink="/sidebar/my-dashboard" >
+    <div class="item"  routerLink="/sidebar/my-dashboard" >
       <button mat-button class="trans" (click)="dash()">
      <div class="fa fa-dash"><i class="material-icons">dashboard</i></div>
      <div class="label" style="text-align: left">DASHBOARD</div>
@@ -49,17 +49,18 @@
       </button>
     </div>
 </mat-nav-list>
+
   </mat-drawer>
   <mat-drawer-content autosize style="position: absolute;right: 0px;left: 0px;bottom: 0px;top: 0px;padding: 0px">
       <mat-toolbar>
           <div >
-            <div style="margin-left: 750%">
+            <div style="margin-left: 850%">
               <button  mat-button class="trans"style="color:lightsalmon; transform: translateY(18px); font-size: 10pt ">REGISTER</button>
               <button mat-button class="trans" style="color:lightsalmon;transform: translateY(18px); font-size: 10pt;"><i class="material-icons">logout</i></button>
             </div>
-        
+
         </div>
-    </mat-toolbar>
+        </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-drawer-content>
 

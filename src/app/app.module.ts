@@ -9,6 +9,8 @@ import { routesInfor } from './router.module';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule } from '@angular/material';
+import {MatTableModule} from '@angular/material/table';
+import {MatCardModule} from '@angular/material/card';
 
 
 import { AppComponent } from './app.component';
@@ -31,7 +33,8 @@ import { MapComponent } from './map/map.component';
     ProfileComponent,
     TableComponent,
     ChartsComponent,
-    MapComponent
+    MapComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -42,9 +45,11 @@ import { MapComponent } from './map/map.component';
     MatCheckboxModule,
     MatSidenavModule,
     MatListModule,
+    MatTableModule,
+    MatCardModule,
     RouterModule.forRoot(routesInfor)
   ],
-  exports: [MatButtonModule, MatCheckboxModule, MatSidenavModule, MatListModule],
+  exports: [MatButtonModule, MatCheckboxModule, MatSidenavModule, MatListModule, MatTableModule, MatCardModule],
   providers: [],
   bootstrap: [AppComponent]
 })
