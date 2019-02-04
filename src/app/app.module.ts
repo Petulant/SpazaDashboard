@@ -11,8 +11,12 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule } from '@angular/material';
 import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
+import {
+  MatDialogModule, MatInputModule, MatMenuModule,MatProgressSpinnerModule
+} from '@angular/material';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
-
+import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -39,6 +43,12 @@ import { MapComponent } from './map/map.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MatProgressSpinnerModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    MatMenuModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
@@ -49,7 +59,7 @@ import { MapComponent } from './map/map.component';
     MatCardModule,
     RouterModule.forRoot(routesInfor)
   ],
-  exports: [MatButtonModule, MatCheckboxModule, MatSidenavModule, MatListModule, MatTableModule, MatCardModule],
+  exports: [MatButtonModule, MatCheckboxModule, MatSidenavModule, MatListModule,MatFormFieldModule, MatTableModule, MatCardModule],
   providers: [],
   bootstrap: [AppComponent]
 })
