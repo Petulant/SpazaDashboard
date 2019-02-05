@@ -1,0 +1,11 @@
+.mybarchart{
+  width: 50%;
+  margin-left: 30%;
+  align-items: center;
+}
+
+canvas#baseChart {
+  width: 80%!important;
+  height: 20%!important;
+  margin-top: 20px;
+}

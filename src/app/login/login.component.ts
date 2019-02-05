@@ -9,23 +9,22 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   constructor(private router: Router) { }
-  username : string;
-  password : string;
+  username: string;
+  password: string;
 
   ngOnInit() {
   }
-  
+login() {
+      this.router.navigate(["/sidebar"]);
 
-     login() : void {
-      this.router.navigate(['/sidebar']);
-      if(this.username == 'admin' && this.password == 'admin'){
-       this.router.navigate(["user"]);
-      }else {
-        alert("Invalid credentials");
+      if (this.username=="admin" && this.password== "admin") {
+       this.router.navigate(['user']);
+      } else {
+        alert('Invalid credentials');
       }
     }
-    
-    
+
+
   }
 
 

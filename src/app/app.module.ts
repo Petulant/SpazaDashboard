@@ -11,10 +11,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule } from '@angular/material';
 import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
-import {
-  MatDialogModule, MatInputModule, MatMenuModule,MatProgressSpinnerModule
-} from '@angular/material';
+import {MatDialogModule, MatInputModule, MatMenuModule, MatProgressSpinnerModule} from '@angular/material';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { ChartsModule} from 'ng2-charts';
 
 import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -57,9 +56,10 @@ import { MapComponent } from './map/map.component';
     MatListModule,
     MatTableModule,
     MatCardModule,
+    ChartsModule,
     RouterModule.forRoot(routesInfor)
   ],
-  exports: [MatButtonModule, MatCheckboxModule, MatSidenavModule, MatListModule,MatFormFieldModule, MatTableModule, MatCardModule],
+  exports: [MatButtonModule, MatCheckboxModule, MatSidenavModule, MatListModule, MatFormFieldModule, MatTableModule, MatCardModule],
   providers: [],
   bootstrap: [AppComponent]
 })
