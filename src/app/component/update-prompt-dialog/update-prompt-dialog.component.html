@@ -1,0 +1,48 @@
+<h2 mat-dialog-title style="text-align: center">Update Spaza</h2>
+
+<body>
+    <mat-dialog-content [formGroup]="spazaShopForm">
+      <!--  -->
+        <mat-form-field >
+          <input matInput
+                  placeholder="Spaza Name"
+                  formControlName="spazaName">
+                  <!-- spazaShop.get('name').hasError('minlength') -->
+                  <!-- <mat-error *ngIf="!spazaShopForm.get(spazaName).hasError('Validators.required')">Please provide Spaza name</mat-error> -->
+          <!-- <mat-error *ngIf="spazaShopForm.get(spazaName).hasError('Validators.required') && spazaShopForm.get('spazaName').touched">
+            Spaza name is <strong>required</strong>
+          </mat-error> -->
+        </mat-form-field><br>
+        <mat-form-field >
+          <input matInput
+                  placeholder="Township Name"
+                  formControlName="cityName">
+                  <!-- <mat-error *ngIf="!cityName.hasError('required')">Please provide Spaza name</mat-error>
+          <mat-error *ngIf="cityName.hasError('required')">
+            Township name is <strong>required</strong>
+          </mat-error> -->
+        </mat-form-field><br>
+        <mat-form-field >
+          <input matInput
+                  placeholder="Street Name"
+                  formControlName="streetName">
+                  <!-- <mat-error *ngIf=" !streetName.hasError('required')">Please provide Spaza name</mat-error>
+          <mat-error *ngIf="streetName.hasError('required')">
+            Street name is <strong>required</strong>
+          </mat-error> -->
+        </mat-form-field>
+        <!-- <mat-form-field>
+          <input matInput  placeholder="Spaza Name" [formControl]="spazaName" required>{{spaza?.spazaName}}</input>
+            <mat-error *ngIf="spazaName.hasError('spazaName') && !spazaName.hasError('required')">Please provide Spaza name</mat-error> -->
+          <!-- <mat-error *ngIf="spazaName.hasError('required')">
+            Spaza name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field> -->
+      
+    </mat-dialog-content>
+    
+    <mat-dialog-actions>
+        <button class="mat-raised-button"(click)="close()">Close</button>
+        <button class="mat-raised-button mat-primary"(click)="save()" [disabled]="!spazaShopForm.valid">Save</button>
+    </mat-dialog-actions>
+</body>
