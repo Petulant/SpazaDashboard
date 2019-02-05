@@ -20,7 +20,7 @@ const mypaths: Routes = [
         {path: 'my-dashboard', component: MyDashboardComponent},
         {path: 'profile', component: ProfileComponent},
         {path: 'table', component: TableComponent},
-        {path: 'charts', component: AnalysisComponent},
+        {path: 'charts', component: ChartsComponent},
         {path: 'map', component: MapComponent}
     ]},
 ];

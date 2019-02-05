@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import Chart from 'chart.js';
 
-
+declare var firebase;
 @Component({
   selector: 'app-charts',
   templateUrl: './charts.component.html',
@@ -13,7 +14,8 @@ export class ChartsComponent implements OnInit {
  };
 
  public barChartsLabels = ['Soshanguve', 'PretoriaCBD', 'Mamelodi' ];
- public barChartsType = 'bar';
+ //public barChartsLabels = [];
+ public barChartsType = 'pie';
  public barChartsLegend = true;
  public barChartsData = [
    {data: [23, 65 , 45], label: 'Series A'},
@@ -32,42 +34,27 @@ export class ChartsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  //   this.myChart = new Chart("myChart", {
-  //     type: 'bar',
-  //     data: {
-  //         labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-  //         datasets: [{
-  //             label: '# of Votes',
-  //             data: [12, 19, 3, 5, 2, 3],
-  //             backgroundColor: [
-  //                 'rgba(255, 99, 132, 0.2)',
-  //                 'rgba(54, 162, 235, 0.2)',
-  //                 'rgba(255, 206, 86, 0.2)',
-  //                 'rgba(75, 192, 192, 0.2)',
-  //                 'rgba(153, 102, 255, 0.2)',
-  //                 'rgba(255, 159, 64, 0.2)'
-  //             ],
-  //             borderColor: [
-  //                 'rgba(255,99,132,1)',
-  //                 'rgba(54, 162, 235, 1)',
-  //                 'rgba(255, 206, 86, 1)',
-  //                 'rgba(75, 192, 192, 1)',
-  //                 'rgba(153, 102, 255, 1)',
-  //                 'rgba(255, 159, 64, 1)'
-  //             ],
-  //             borderWidth: 1
-  //         }]
-  //     },
-  //     options: {
-  //         scales: {
-  //             yAxes: [{
-  //                 ticks: {
-  //                     beginAtZero:true
-  //                 }
-  //             }]
-  //         }
-  //     }
-  // });
+    this.getAllTownships();
+  
+  }
+
+  getAllTownships(){
+    var mySpazasRef;
+    
+    var usersRef = firebase.database().ref("/users/").on("value", (snapshot) => {
+      
+      snapshot.forEach(usersElement => {
+        console.log(usersElement.val());
+        mySpazasRef = usersElement.key;
+        firebase.database().ref("users/"+mySpazasRef+"/mySpazas").once("value",(snap) => {
+          snap.forEach(element => {
+            
+
+            this.barChartsLabels.push(element.val().cityName);
+          });
+        })
+      });
+    });
   }
 
 }
