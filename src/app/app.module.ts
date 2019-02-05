@@ -6,7 +6,7 @@ import { MatIconModule} from '@angular/material/icon';
 import { NgModule } from '@angular/core';
 import {RouterModule} from '@angular/router';
 import { routesInfor } from './router.module';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatMenuModule, MatProgressSpinnerModule} from '@angular/material';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule } from '@angular/material';
 import {MatTableModule} from '@angular/material/table';
@@ -48,6 +48,12 @@ import { AnalysisComponent } from './analysis/analysis.component';
     BrowserModule,
     MatInputModule,
     BrowserAnimationsModule,
+    MatProgressSpinnerModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    MatMenuModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
@@ -64,7 +70,7 @@ import { AnalysisComponent } from './analysis/analysis.component';
     MatDialogModule,
     RouterModule.forRoot(routesInfor)
   ],
-  exports: [MatButtonModule, MatCheckboxModule, MatSidenavModule, MatListModule, MatTableModule, MatCardModule],
+  exports: [MatButtonModule, MatCheckboxModule, MatSidenavModule, MatListModule,MatFormFieldModule, MatTableModule, MatCardModule],
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [PromptDialogComponent, UpdatePromptDialogComponent]
