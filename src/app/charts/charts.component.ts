@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import Chart from 'chart.js';
 
-
+declare var firebase;
 @Component({
   selector: 'app-charts',
   templateUrl: './charts.component.html',
@@ -13,7 +14,8 @@ export class ChartsComponent implements OnInit {
  };
 
  public barChartsLabels = ['Soshanguve', 'PretoriaCBD', 'Mamelodi' ];
- public barChartsType = 'bar';
+//  public barChartsLabels = [];
+ public barChartsType = 'pie';
  public barChartsLegend = true;
  public barChartsData = [
    {data: [23, 65 , 45], label: 'Series A'},
