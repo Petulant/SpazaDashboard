@@ -13,9 +13,11 @@ import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ChartsModule} from 'ng2-charts';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatRadioModule} from '@angular/material/radio';
 
 
-import {MatDialog} from '@angular/material';
+
 import {MatInputModule} from '@angular/material/input';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -30,7 +32,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { PromptDialogComponent } from './component/prompt-dialog/prompt-dialog.component';
 import { UpdatePromptDialogComponent } from './component/update-prompt-dialog/update-prompt-dialog.component';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
-import { AnalysisComponent } from './analysis/analysis.component';
+import { RegisterComponent } from './register/register.component';
+
 
 
 @NgModule({
@@ -42,10 +45,10 @@ import { AnalysisComponent } from './analysis/analysis.component';
     ProfileComponent,
     TableComponent,
     ChartsComponent,
-    AnalysisComponent,
     MapComponent,
     PromptDialogComponent,
-    UpdatePromptDialogComponent
+    UpdatePromptDialogComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -64,9 +67,11 @@ import { AnalysisComponent } from './analysis/analysis.component';
     MatSidenavModule,
     MatListModule,
     MatTableModule,
+    MatGridListModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     FormsModule,
+    MatRadioModule,
 
     MatCardModule,
     ChartsModule,

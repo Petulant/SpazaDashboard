@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import {MatDialog, MatDialogConfig,MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import {MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { PromptDialogComponent } from '../component/prompt-dialog/prompt-dialog.component';
 
 
@@ -30,11 +30,10 @@ export class TableComponent implements OnInit {
     // });
   }
 
-  getAllSpazas(/*userCoords*/){
-    // Array<{spazaName: string, latlog: any ,spazaIndex: number}>
-    //this.dataSource = [];
+  getAllSpazas(/*userCoords*/) {
+
     var mySpazasRef;
-    
+
     var usersRef = firebase.database().ref("/users/").on("value", (snapshot) => {
       this.dataSource = [];
       snapshot.forEach(usersElement => {
@@ -48,11 +47,11 @@ export class TableComponent implements OnInit {
               spazaName : element.val().spazaName,
               cityName : element.val().cityName,
               streetName : element.val().streetName
-            }
+            };
 
             this.dataSource.push(spaza);
           });
-        })
+        });
       });
     });
   }

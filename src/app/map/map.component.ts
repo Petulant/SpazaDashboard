@@ -17,9 +17,9 @@ export class MapComponent implements OnInit {
     this.getAllSpazas();
   }
 
-  async showMap(/*lat : number, log : number*/){
+  async showMap(/*lat : number, log : number*/) {
     L.mapbox.accessToken = 'pk.eyJ1IjoicmVhbHNhbmVsZSIsImEiOiJjanAybWZ2enUwODIxM3dwaGo2cDU4bWNxIn0.Q0PkSHqlG4VV6CNw1c_zcA';
-    this.mymap = L.map('mapid',{zoomControl:false}).setView(['-25.7518607','28.263174'],15);
+    this.mymap = L.map('mapid', {zoomControl: false}).setView(['-25.7518607', '28.263174'], 15);
   //   var geocoderControl = L.mapbox.geocoderControl('mapbox.places', {
   //     keepOpen: true, autocomplete: true
   // });
@@ -28,10 +28,10 @@ export class MapComponent implements OnInit {
 
   // geocoderControl.on('select', function(res) {
   //   console.log(res)
-    
+
   //   var location = L.marker([res.feature.center[1], res.feature.center[0]],9).addTo(mymap);
   //   console.log(location);
-    
+
   //   console.log("b_show_der = "+ this.b_show_der);
   //   var circle = L.circle([res.feature.center[1], res.feature.center[0]], {
   //     color: 'red',
@@ -59,7 +59,7 @@ export class MapComponent implements OnInit {
   //   fillOpacity: 0.5,
   //   radius: 20
   // }).addTo(this.mymap);
-  
+
   //marker.bindPopup("<b>I'm Here</b>").openPopup();
   }
 
@@ -67,15 +67,15 @@ export class MapComponent implements OnInit {
     // Array<{spazaName: string, latlog: any ,spazaIndex: number}>
 
     var mySpazasRef;
-    
+
     var usersRef = firebase.database().ref("users/").on("value", (snapshot) => {
       snapshot.forEach(usersElement => {
         mySpazasRef = usersElement.key;
         var customMarker = L.Marker.extend({
-                options: { 
-                  spazaName: '',//element.val().spazaName,
-                  cityName: '',//element.val().cityName,
-                  streetName: ''//element.val().streetName
+                options: {
+                  spazaName: '', //element.val().spazaName,
+                  cityName: '', //element.val().cityName,
+                  streetName: '' //element.val().streetName
                 }
             });
         firebase.database().ref("users/"+mySpazasRef+"/mySpazas").once("value",(snap) => {
@@ -85,7 +85,7 @@ export class MapComponent implements OnInit {
             // var marker = L.marker([element.val().latitude_coord, element.val().longitude_coord],10).on('click', function(e){
             //   console.log('works')
             // }).addTo(this.mymap);
-            
+
             var marker = L.marker([element.val().latitude_coord, element.val().longitude_coord],10,).addTo(this.mymap);
             marker.bindPopup("<b>"+element.val().spazaName+"</b>").openPopup();
           });

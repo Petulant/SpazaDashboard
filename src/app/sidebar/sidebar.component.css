@@ -5,6 +5,7 @@
   }
   mat-toolbar{
     background-color:#111;
+
   }
   .trans{
     background-color: transparent !important;
@@ -71,4 +72,8 @@ mat-toolbar{
 }
   .a{
 
+  }
+  mat-toolbar .btn{
+    position: fixed;
+    margin-left: 95%;
   }

@@ -5,13 +5,15 @@
   .example-spacer {
     flex: 1 1 auto;
   }
-mat-toolbar{
-    background-color:#111;
-}
+
 .example-card{
   text-align: center;
-  widows: 100%;
+   width: 30%;
+   height: 50%;
 
+}
+.example-full-width {
+  width: 100%;
 }
 
 mat-card-content {
@@ -20,15 +22,21 @@ mat-card-content {
   display: flex;
   justify-content: center;
   align-items: center;
+
+}
+form{
+
+  padding-top: 2%;
 }
 
 mat-card{
   width: 350px;
-  height: 400px;
+  height: 600px;
   margin: auto;
   vertical-align: middle;
   top:100px;
-  background-color:coral;
+
+
 }
 .form-row{
   display: flex;
@@ -37,12 +45,26 @@ mat-card{
   flex: 1;
 
 }
-/* .background{
-  background: url("../../../assets/img/lock_bg.jpg") no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  width: 100%;
+
+.bgimg {
+  display:block;
   height: 100%;
-} */
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+  background-color: #b75f24;
+  /* background: url("../../assets/images.png") no-repeat; */
+}
+.material-icons{
+  top: 10px;
+  color: #b75f24;
+
+}
+
+.mylocker  .material-icons{
+  font-size: 90px;
+  display: flex;
+align-items: center;
+justify-content: center;
+
+}
+
