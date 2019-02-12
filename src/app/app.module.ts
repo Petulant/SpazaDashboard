@@ -13,6 +13,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ChartsModule} from 'ng2-charts';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 import {MatDialog} from '@angular/material';
@@ -67,7 +68,7 @@ import { AnalysisComponent } from './analysis/analysis.component';
     ReactiveFormsModule,
     MatFormFieldModule,
     FormsModule,
-
+    MatGridListModule,
     MatCardModule,
     ChartsModule,
     // MatDialog,
