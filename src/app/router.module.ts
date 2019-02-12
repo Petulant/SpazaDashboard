@@ -9,13 +9,15 @@ import { ProfileComponent } from './profile/profile.component';
 import { TableComponent } from './table/table.component';
 import { ChartsComponent } from './charts/charts.component';
 import { MapComponent } from './map/map.component';
-import { AnalysisComponent } from './analysis/analysis.component';
+import { RegisterComponent } from './register/register.component';
+
 
 
 
 
 const mypaths: Routes = [
     {path: '', component: LoginComponent },
+    {path: 'register', component: RegisterComponent},
     {path: 'sidebar', component: SidebarComponent, children: [
         {path: 'my-dashboard', component: MyDashboardComponent},
         {path: 'profile', component: ProfileComponent},

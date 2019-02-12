@@ -1,6 +1,8 @@
-
+<mat-grid-list cols="2" rowHeight="1.2:1">
+    <mat-grid-tile>
   <div class="mybarchart">
-  <div style="display : flex"  >
+      <b><h3>Bar Chart</h3><br><br></b>
+  <div style="display : flex">
     <canvas baseChart width="100" height="50"
     [datasets]="PieChartsData"
     [labels]="PieChartsLabels"
@@ -9,7 +11,7 @@
     [chartType]="PieChartsType"></canvas>
 
   </div>
-</div> 
+</div>
 <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
 
 

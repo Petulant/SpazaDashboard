@@ -4,8 +4,10 @@
   align-items: center;
 }
 
-/* canvas#baseChart {
-  width: 80%!important;
-  height: 20%!important;
-  margin-top: 20px;
-} */
+mat-grid-tile {
+  background:lightsalmon;
+}
+h3{
+text-align: center;
+padding-top:5%;
+}
