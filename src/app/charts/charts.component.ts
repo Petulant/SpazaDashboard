@@ -15,7 +15,7 @@ export class ChartsComponent implements OnInit {
 
  public barChartsLabels = ['Soshanguve', 'PretoriaCBD', 'Mamelodi' ];
 //  public barChartsLabels = [];
- public barChartsType = 'pie';
+ public barChartsType = 'bar';
  public barChartsLegend = true;
  public barChartsData = [
    {data: [23, 65 , 45], label: 'Series A'},

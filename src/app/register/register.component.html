@@ -1,7 +1,10 @@
-<mat-card-header class="Regi" >
-    <mat-card-title >Register</mat-card-title>
-  </mat-card-header>
-  <br><br>
+
+<div class="bgimg">
+
+    <!-- <mat-card-header class="Regi" >
+        <mat-card-title >Register</mat-card-title>
+      </mat-card-header> -->
+<b><p>TO REGISTER PLEASE FILL THE FORM BELOW</p></b>
   <mat-card>
   <mat-card-content>
     <form class="my-form">
@@ -39,12 +42,17 @@
   <mat-card-content>
     <form class="my-form">
        <!--FORM FIELDS-->
+
     </form>
+
   </mat-card-content>
 
   <mat-card-actions>
-    <button mat-raised-button (click)="register()" color="primary">REGISTER</button>
+      <div class="mybuutton">
+    <button mat-raised-button (click)="register()" style="color:darkgrey" >REGISTER</button>
+  </div>
   </mat-card-actions>
-</mat-card>
 
+</mat-card>
 <router-outlet></router-outlet>
+</div>

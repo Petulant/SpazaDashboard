@@ -3,6 +3,7 @@
   min-width: 150px;
   max-width: 500px;
   width: 100%;
+
 }
 
 .full-width {
@@ -16,5 +17,25 @@ mat-card{
   height: 400px;
   margin:auto;
   vertical-align:middle;
-  top:100px;
+  top:10px;
+  border-radius: 10%;
+
 }
+.bgimg{
+  display:block;
+  height: 100%;
+  background-size: cover;
+  background-color: #b75f24;
+}
+.mybuutton{
+  text-align: center;
+  color: aliceblue;
+}
+
+p{
+  text-align: center;
+  padding-top: 5%;
+  color:lightgray;
+  letter-spacing: 2px;
+}
+

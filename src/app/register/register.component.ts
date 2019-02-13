@@ -7,9 +7,11 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
-
+  register() {
+    this.router.navigate(['']);
+  }
 }
