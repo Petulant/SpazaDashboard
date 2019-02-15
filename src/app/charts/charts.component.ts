@@ -31,7 +31,7 @@ export class ChartsComponent implements OnInit {
 //    {data: [1, 1 , 1], label: 'Series A'},
 //    {data: [18, 14 , 10], label: 'Series B'}
 //  ];
- public PieChartsData = []
+ public PieChartsData = [];
 
 
   constructor() { }
@@ -54,10 +54,10 @@ export class ChartsComponent implements OnInit {
           // this.PieChartsData = [];
           snap.forEach(element => {
 
-            if(this.PieChartsLabels.length != 0 && this.PieChartsLabels != null){
-              var isFound : boolean = false
-              for(let i = 0; i <= this.PieChartsLabels.length; i++){
-                if(this.PieChartsLabels[i] === element.val().cityName){
+            if (this.PieChartsLabels.length != 0 && this.PieChartsLabels != null) {
+              var isFound: boolean = false
+              for (let i = 0; i <= this.PieChartsLabels.length; i++) {
+                if (this.PieChartsLabels[i] === element.val().cityName) {
                   console.log("City found")
                   this.PieChartsData[i]++;
                   isFound = true;
@@ -65,27 +65,27 @@ export class ChartsComponent implements OnInit {
                 }
               }
 
-              if(!isFound){
+              if (!isFound) {
                 console.log("City not found")
                 var index = this.PieChartsLabels.push(element.val().cityName);
-                this.PieChartsData[index-1] = 1;
+                this.PieChartsData[index - 1] = 1;
 
               }
 
 
-            }else{
+            } else {
               var index = this.PieChartsLabels.push(element.val().cityName);
-              this.PieChartsData[index-1] = 1;
-              console.log(this.PieChartsLabels)
+              this.PieChartsData[index - 1] = 1;
+              console.log(this.PieChartsLabels);
             }
 
 
           });
         });
       });
-      this.showPie()
-      console.log(this.PieChartsData)
-      console.log(this.PieChartsLabels)
+      this.showPie();
+      console.log(this.PieChartsData);
+      console.log(this.PieChartsLabels);
     });
   }
 
@@ -104,7 +104,7 @@ export class ChartsComponent implements OnInit {
   }
 
 
-  showPie(){
+  showPie() {
     var ctx = document.getElementById("myChart");
     var myChart = new Chart(ctx, {
     type: 'pie',
@@ -138,7 +138,7 @@ export class ChartsComponent implements OnInit {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero:true
+                    beginAtZero: true
                 }
             }]
         }
