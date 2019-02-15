@@ -1,4 +1,4 @@
-<mat-grid-list cols="2" rowHeight="1.2:1">
+<!-- <mat-grid-list cols="2" rowHeight="1.2:1">
     <mat-grid-tile>
   <div class="mybarchart">
       <b><h3>Bar Chart</h3><br><br></b>
@@ -11,47 +11,14 @@
     [chartType]="PieChartsType"></canvas>
 
   </div>
-</div>
-<!-- <canvas id="myChart" width="400" height="400"></canvas> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- </div> -->
-<!-- <canvas id="myChart" width="400" height="400"></canvas> -->
-<!-- <div class="col-xs-4">
-<div class="myPiechart">
-  <div style="display : flex">
-    <canvas baseChart width="100" height="50"
-    [datasets]="PieChartsData"
-    [labels]="PieChartsLabels"
-      [legend]="PieChartsLegend"
-    [chartType]="PieChartsType"></canvas>
-
-  </div>
-</div>
 </div> -->
-<!-- </div>
-</div> -->
+
+<mat-grid-list cols="2" rowHeight="2:1" >
+  
+  <mat-grid-tile style="border-right: 1px solid">
+    <mat-card>
+        <mat-card-title>Simple card</mat-card-title>
+      <canvas id="myChart" width="700" height="300"></canvas>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
