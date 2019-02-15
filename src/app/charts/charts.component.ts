@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
 
 declare var firebase;
+
 @Component({
   selector: 'app-charts',
   templateUrl: './charts.component.html',
@@ -13,16 +14,16 @@ export class ChartsComponent implements OnInit {
    responsive: true
  };
 
- public barChartsLabels : Array<string> = ['Soshanguve', 'PretoriaCBD', 'Mamelodi' ];
- //public barChartsLabels = [];
-//  public barChartsType = 'pie';
-//  public barChartsLegend = true;
-//  public barChartsData = [
-//    {data: [23, 65 , 45], label: 'Series A'},
-//    {data: [18, 14 , 10], label: 'Series B'}
-//  ];
+ public barChartsLabels: Array<string> = ['Soshanguve', 'PretoriaCBD', 'Mamelodi' ];
+//  public barChartsLabels = [];
+ public barChartsType = 'bar';
+ public barChartsLegend = true;
+ public barChartsData = [
+   {data: [23, 65 , 45], label: 'Series A'},
+   {data: [18, 14 , 10], label: 'Series B'}
+ ];
 
-  public PieChartsLabels :Array<string> = [];
+  public PieChartsLabels: Array<string> = [];
   public PieChartsType = 'pie';
   public PieChartsLegend = true;
 //   public PieChartsData = [
@@ -38,14 +39,14 @@ export class ChartsComponent implements OnInit {
   ngOnInit() {
     this.getAllTownships();
     // this.showPie();
-  
+
   }
 
-  async getAllTownships(){
+  async getAllTownships() {
     var mySpazasRef;
-    
+
     var usersRef = firebase.database().ref("/users/").on("value", (snapshot) => {
-      
+
       snapshot.forEach(usersElement => {
         console.log(usersElement.val());
          mySpazasRef = usersElement.key;
@@ -54,7 +55,7 @@ export class ChartsComponent implements OnInit {
           snap.forEach(element => {
 
             if(this.PieChartsLabels.length != 0 && this.PieChartsLabels != null){
-              var isFound : boolean = false 
+              var isFound : boolean = false
               for(let i = 0; i <= this.PieChartsLabels.length; i++){
                 if(this.PieChartsLabels[i] === element.val().cityName){
                   console.log("City found")
@@ -68,19 +69,19 @@ export class ChartsComponent implements OnInit {
                 console.log("City not found")
                 var index = this.PieChartsLabels.push(element.val().cityName);
                 this.PieChartsData[index-1] = 1;
-                
+
               }
 
-              
+
             }else{
               var index = this.PieChartsLabels.push(element.val().cityName);
               this.PieChartsData[index-1] = 1;
               console.log(this.PieChartsLabels)
             }
 
-            
+
           });
-        })
+        });
       });
       this.showPie()
       console.log(this.PieChartsData)
@@ -88,12 +89,12 @@ export class ChartsComponent implements OnInit {
     });
   }
 
-  searchIfExist(cityName : string){
-    var isFound : boolean = false;
+  searchIfExist(cityName: string) {
+    var isFound: boolean = false;
 
-    if(this.barChartsLabels.length != 0 && this.barChartsLabels != null){
-      for(let i = 0; i <= this.barChartsLabels.length; i++){
-        if(this.barChartsLabels[1].toLowerCase === cityName.toLowerCase){
+    if (this.barChartsLabels.length !== 0 && this.barChartsLabels != null) {
+      for (let i = 0; i <= this.barChartsLabels.length; i++) {
+        if (this.barChartsLabels[1].toLowerCase === cityName.toLowerCase) {
           isFound = true;
         }
       }

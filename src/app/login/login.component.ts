@@ -23,9 +23,6 @@ login() {
         alert('Invalid credentials');
       }
     }
-    register() {
-      this.router.navigate(['/register']);
-    }
 
   }
 
