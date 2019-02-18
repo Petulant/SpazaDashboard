@@ -53,14 +53,14 @@
 </mat-nav-list>
 
   </mat-drawer>
-  <mat-drawer-content autosize style="position: absolute;right: 0px;left: 0px;bottom: 0px;top: 0px;padding: 0px">
-      <mat-toolbar>
-            <div class="btn">
-                <button  mat-button class="trans" (click)="register()" style="color:lightsalmon; transform: translateY(18px); font-size: 10pt ">REGISTER</button>
-              <button mat-button type="button" (click)="logout()"  class="trans" style="color:lightsalmon;transform: translateY(18px); font-size: 10pt;"><i class="material-icons">logout</i></button>
+  <mat-drawer-content autosize style="position: absolute;right: 0px;left: 5%;bottom: 0px;top: 0px;padding: 0px">
+    <mat-toolbar>
+      <div class="btn">
+        <button  mat-button class="trans" (click)="register()" style="color:lightsalmon; transform: translateY(18px); font-size: 10pt ">ADD ADMIN</button>
+        <button mat-button type="button" (click)="logout()"  class="trans" style="color:lightsalmon;transform: translateY(18px); font-size: 10pt;"><i class="material-icons">logout</i></button>
 
-            </div>
-        </mat-toolbar>
+      </div>
+      </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-drawer-content>
 

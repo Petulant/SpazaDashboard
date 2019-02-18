@@ -14,7 +14,7 @@ mat-card-content{
 }
 mat-card{
   width: 350px;
-  height: 400px;
+  /* height: 400px; */
   margin:auto;
   vertical-align:middle;
   top:10px;
@@ -29,7 +29,7 @@ mat-card{
 }
 .mybuutton{
   text-align: center;
-  color: aliceblue;
+  color: #b75f24;
 }
 
 p{
@@ -37,5 +37,9 @@ p{
   padding-top: 5%;
   color:lightgray;
   letter-spacing: 2px;
+}
+
+.error{
+color:red;
 }
 

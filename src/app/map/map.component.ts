@@ -19,7 +19,7 @@ export class MapComponent implements OnInit {
 
   async showMap(/*lat : number, log : number*/) {
     L.mapbox.accessToken = 'pk.eyJ1IjoicmVhbHNhbmVsZSIsImEiOiJjanAybWZ2enUwODIxM3dwaGo2cDU4bWNxIn0.Q0PkSHqlG4VV6CNw1c_zcA';
-    this.mymap = L.map('mapid', {zoomControl: false}).setView(['-25.7518607', '28.263174'], 15);
+    this.mymap = L.map('mapid', {zoomControl: true}).setView(['-25.7518607', '28.263174'], 6);
   //   var geocoderControl = L.mapbox.geocoderControl('mapbox.places', {
   //     keepOpen: true, autocomplete: true
   // });

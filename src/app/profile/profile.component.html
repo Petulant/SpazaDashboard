@@ -1,4 +1,4 @@
-<div class="main-content">
+<!-- <div class="main-content">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8">
@@ -73,4 +73,27 @@
 
         </div>
     </div>
-  </div>
+  </div> -->
+  <h1 style="text-align: center"><u>System Users</u></h1>
+  <mat-grid-list cols="3" rowHeight="1:1">
+    <mat-grid-tile *ngFor = "let userProfile of usersProfilesList,  let i = index"> 
+        <mat-card >
+            <mat-card-header>
+                <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                <mat-card-title>Name : {{ userProfile?.name }} <br>Surname : {{ userProfile?.surname }}</mat-card-title>
+                <mat-card-subtitle> {{ userProfile?.typeOfUser }} </mat-card-subtitle>
+            </mat-card-header>
+            <mat-icon  style="font-size: 50pt;text-align: center">person</mat-icon>
+            <mat-card-content>
+                Email : {{ userProfile?.email }}<br>
+                Gender : {{ userProfile?.gender }}<br>
+                Number of Spaza(s) Registered : {{ userProfile?.numberOfSpazas }}
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button>Deactivate Account</button>
+                <!-- <button mat-button>SHARE</button> -->
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+    
+  </mat-grid-list>
