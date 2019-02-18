@@ -1,8 +1,10 @@
-<h2 mat-dialog-title style="text-align: center">Update Spaza</h2>
+<h2 mat-dialog-title style="text-align: center"><u>Update Spaza</u></h2>
 
 <body>
-    <mat-dialog-content [formGroup]="spazaShopForm">
-      <!--  -->
+    <mat-dialog-content class="content" [formGroup]="spazaShopForm">
+      <div>
+
+      </div>
         <mat-form-field >
           <input matInput
                   placeholder="Spaza Name"
@@ -42,7 +44,8 @@
     </mat-dialog-content>
     
     <mat-dialog-actions>
-        <button class="mat-raised-button"(click)="close()">Close</button>
-        <button class="mat-raised-button mat-primary"(click)="save()" [disabled]="!spazaShopForm.valid">Save</button>
+        <!-- <button class="mat-raised-button"(click)="close()">Close</button> -->
+        <button style="width:166px" mat-raised-button  (click)="close()">Close</button>
+        <button style="width:166px" mat-raised-button (click)="save()" [disabled]="!spazaShopForm.valid">Save</button>
     </mat-dialog-actions>
 </body>

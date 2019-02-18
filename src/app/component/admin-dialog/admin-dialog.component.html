@@ -1,0 +1,18 @@
+<mat-dialog-content class="content">
+  <h3>Do You Want To Assign New Role To : {{userProfile?.name}}?</h3>
+  <p>Current role : {{userProfile?.typeOfUser}}</p>
+  <form [formGroup]="adminForm">
+    <label>New Role: </label>
+    <mat-radio-group formControlName="typeOfUser">
+      <mat-radio-button value="Admin">Admin</mat-radio-button>
+      <mat-radio-button value="Customer">Customer</mat-radio-button>
+      <!-- <mat-radio-button value="never">Never</mat-radio-button> -->
+    </mat-radio-group>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions >
+  <button style="width:166px" mat-raised-button  (click)="close()">Cancel</button>
+  <button style="width:166px" mat-raised-button  (click)="updateSpaza()">Update</button>
+  <button style="width:166px" mat-raised-button color="warn" (click)="deleteSpaza()">Delete</button>
+</mat-dialog-actions>

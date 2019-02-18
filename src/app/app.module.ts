@@ -33,6 +33,7 @@ import { PromptDialogComponent } from './component/prompt-dialog/prompt-dialog.c
 import { UpdatePromptDialogComponent } from './component/update-prompt-dialog/update-prompt-dialog.component';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
+import { AdminDialogComponent } from './component/admin-dialog/admin-dialog.component';
 
 
 
@@ -48,6 +49,7 @@ import { RegisterComponent } from './register/register.component';
     MapComponent,
     PromptDialogComponent,
     UpdatePromptDialogComponent,
+    AdminDialogComponent,
     RegisterComponent
   ],
   imports: [
@@ -82,6 +84,6 @@ import { RegisterComponent } from './register/register.component';
   exports: [MatButtonModule, MatCheckboxModule, MatSidenavModule, MatListModule, MatFormFieldModule, MatTableModule, MatCardModule],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [PromptDialogComponent, UpdatePromptDialogComponent]
+  entryComponents: [PromptDialogComponent, UpdatePromptDialogComponent, AdminDialogComponent]
 })
 export class AppModule { }

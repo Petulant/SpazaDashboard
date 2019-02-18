@@ -1,3 +1,13 @@
 /* body{
     width: 150%;
 }  */
+
+.content{
+    width: 100%;
+    max-width: 550px;
+    min-width: 550px;
+}
+
+mat-form-field{
+    width: 100%;
+}

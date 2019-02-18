@@ -1,5 +1,6 @@
 
-<mat-dialog-content>
+<div>
+  <mat-dialog-content class="content">
   <h1 style="text-align: center">{{spaza?.spazaName}}</h1>
   <p>Located At</p>
   <h3>Township : {{spaza?.cityName}}</h3>
@@ -7,8 +8,9 @@
   <b style="color: red">Do you want to Update or Delete?</b>
 </mat-dialog-content>
 
-<mat-dialog-actions style="margin-left: 25%">
-  <button class="mat-raised-button"(click)="close()">Close</button>
-  <button class="mat-raised-button mat-primary"(click)="updateSpaza()">Update</button>
-  <button class="mat-raised-button mat-primary"(click)="deleteSpaza()" style="background-color: red">Delete</button>
+<mat-dialog-actions >
+  <button style="width:166px" mat-raised-button  (click)="close()">Close</button>
+  <button style="width:166px" mat-raised-button  (click)="updateSpaza()">Update</button>
+  <button style="width:166px" mat-raised-button color="warn" (click)="deleteSpaza()">Delete</button>
 </mat-dialog-actions>
+</div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogConfig, MatDialog } from '@angular/material';
+import { AdminDialogComponent } from '../component/admin-dialog/admin-dialog.component';
 
 export interface Profile{
   _key : string;
@@ -21,7 +23,7 @@ declare var firebase;
 export class ProfileComponent implements OnInit {
   usersProfilesList: Array<Profile> = [];
   
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
     firebase.database().ref('/users/').on('value', (snapshot) =>{
@@ -55,6 +57,24 @@ export class ProfileComponent implements OnInit {
         
       });
     });
+  }
+
+  openDialog(userProfile: Profile){
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    dialogConfig.data = userProfile;
+    // dialogConfig.data = {
+    //   ownerKey : spaza.ownerKey,
+    //   spazaKey : spaza.spazaKey,
+    //   spazaName : spaza.spazaName,
+    //   cityName : spaza.cityName,
+    //   streetName : spaza.streetName
+    // };
+
+    this.dialog.open(AdminDialogComponent, dialogConfig);
   }
 
 }
