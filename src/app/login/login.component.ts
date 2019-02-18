@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,10 +8,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  spazaDash: FormGroup;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private Fb: FormBuilder) {
+    this.spazaDash = Fb.group({
+      email: ['', Validators.compose([ Validators.pattern('^[a-zA-Z_.+-]+@[a-zA-Z-]+.[a-zA-Z0-9-.]+$'), Validators.required])],
+      password: ['', Validators.compose([ Validators.minLength(6), Validators.maxLength(12), Validators.required])],
+
+      });
+  }
   username: string;
   password: string;
+
+
 
   ngOnInit() {
   }

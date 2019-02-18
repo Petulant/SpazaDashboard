@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-export interface Profile{
-  _key : string;
+export interface Profile {
+  _key: string;
   email?: string;
   gender?: string;
-  name? : string;
-  surname? : string;
-  typeOfUser? : string;
+  name?: string;
+  surname?: string;
+  typeOfUser?: string;
   numberOfSpazas?: number;
 }
 
@@ -20,13 +20,13 @@ declare var firebase;
 
 export class ProfileComponent implements OnInit {
   usersProfilesList: Array<Profile> = [];
-  
+
   constructor() { }
 
   ngOnInit() {
-    firebase.database().ref('/users/').on('value', (snapshot) =>{
+    firebase.database().ref('/users/').on('value', (snapshot) => {
       snapshot.forEach(element => {
-        if(element.val().mySpazas){
+        if (element.val().mySpazas) {
           let userProfile = {
             _key : element.key,
             email : element.val().email,
@@ -34,13 +34,13 @@ export class ProfileComponent implements OnInit {
             name : element.val().name,
             surname : element.val().surname,
             typeOfUser : element.val().typeOfUser,
-            numberOfSpazas : Object.keys(element.val().mySpazas).length //--
+            numberOfSpazas : Object.keys(element.val().mySpazas).length
 
-          }
+          };
 
           this.usersProfilesList.push(userProfile);
-          
-        }else{
+
+        } else {
           let userProfile = {
             _key : element.key,
             email : element.val().email,
@@ -49,10 +49,10 @@ export class ProfileComponent implements OnInit {
             surname : element.val().surname,
             typeOfUser : element.val().typeOfUser,
             numberOfSpazas : 0
-          }
+          };
           this.usersProfilesList.push(userProfile);
         }
-        
+
       });
     });
   }
