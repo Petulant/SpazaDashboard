@@ -28,7 +28,7 @@ export class ChartsComponent implements OnInit {
 //    {data: [1, 1 , 1], label: 'Series A'},
 //    {data: [18, 14 , 10], label: 'Series B'}
 //  ];
- public PieChartsData = []
+ public PieChartsData = [];
 
 
   constructor() { }
@@ -52,10 +52,10 @@ export class ChartsComponent implements OnInit {
           // this.PieChartsData = [];
           snap.forEach(element => {
 
-            if(this.PieChartsLabels.length != 0 && this.PieChartsLabels != null){
-              var isFound : boolean = false
-              for(let i = 0; i <= this.PieChartsLabels.length; i++){
-                if(this.PieChartsLabels[i] === element.val().cityName){
+            if (this.PieChartsLabels.length != 0 && this.PieChartsLabels != null) {
+              var isFound: boolean = false
+              for (let i = 0; i <= this.PieChartsLabels.length; i++) {
+                if (this.PieChartsLabels[i] === element.val().cityName) {
                   console.log("City found")
                   this.PieChartsData[i]++;
                   totalSpaza++;
@@ -64,19 +64,19 @@ export class ChartsComponent implements OnInit {
                 }
               }
 
-              if(!isFound){
+              if (!isFound) {
                 console.log("City not found")
                 var index = this.PieChartsLabels.push(element.val().cityName);
-                this.PieChartsData[index-1] = 1;
+                this.PieChartsData[index - 1] = 1;
                 totalSpaza++;
               }
 
 
-            }else{
+            } else {
               var index = this.PieChartsLabels.push(element.val().cityName);
-              this.PieChartsData[index-1] = 1;
+              this.PieChartsData[index - 1] = 1;
               totalSpaza++;
-              console.log(this.PieChartsLabels)
+              console.log(this.PieChartsLabels);
             }
 
             // if(element != null){
@@ -86,15 +86,16 @@ export class ChartsComponent implements OnInit {
 
           });
           console.log(snapshot);
-          
+
         });
       });
       this.barChartsData[1] = totalSpaza;
-      this.barChartsData[0] = Object.keys(snapshot).length; // --> PieChartsData[total_Users, total_Spaza]
+      this.barChartsData[0] = Object.keys(snapshot.val()).length; // --> PieChartsData[total_Users, total_Spaza]
+      console.log(Object.keys(snapshot.val()).length);
       this.showPie();
       this.showAppUsers();
-      console.log(this.PieChartsData)
-      console.log(this.PieChartsLabels)
+      console.log(this.PieChartsData);
+      console.log(this.PieChartsLabels);
     });
   }
 
@@ -113,7 +114,7 @@ export class ChartsComponent implements OnInit {
   // }
 
 
-  showPie(){
+  showPie() {
     var ctx = document.getElementById("myChart");
     var myChart = new Chart(ctx, {
     type: 'pie',
@@ -131,12 +132,18 @@ export class ChartsComponent implements OnInit {
           'rgba(75, 192, 192, 0.4)',
           'rgba(153, 102, 255, 0.4)',
           'rgba(255, 159, 64, 0.4)',
-          // 'rgba(255, 99, 132, 0.2)',
-          // 'rgba(54, 162, 235, 0.2)',
-          // 'rgba(255, 206, 86, 0.2)',
-          // 'rgba(75, 192, 192, 0.2)',
-          // 'rgba(153, 102, 255, 0.2)',
-          // 'rgba(255, 159, 64, 0.2)'
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(255, 99, 132, 0.6)',
+          'rgba(54, 162, 235, 0.6)',
+          'rgba(255, 206, 86, 0.6)',
+          'rgba(75, 192, 192, 0.6)',
+          'rgba(153, 102, 255, 0.6)',
+          'rgba(255, 159, 64, 0.6)',
         ],
         borderColor: [
           'rgba(255,99,132,1)',
@@ -153,7 +160,7 @@ export class ChartsComponent implements OnInit {
       scales: {
         yAxes: [{
           ticks: {
-            beginAtZero:true
+            beginAtZero: true
           }
         }]
       }
@@ -193,7 +200,7 @@ export class ChartsComponent implements OnInit {
         scales: {
           yAxes: [{
             ticks: {
-              beginAtZero:true
+              beginAtZero: true
             }
           }]
         }

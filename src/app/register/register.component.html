@@ -6,50 +6,105 @@
       </mat-card-header> -->
 <b><p>TO REGISTER PLEASE FILL THE FORM BELOW</p></b>
   <mat-card>
+
   <mat-card-content>
-    <form class="my-form">
+    <form [formGroup]="spazaDash" class="my-form">
+
+
        <mat-form-field class="full-width">
               <mat-label>First Name</mat-label>
-              <input  matInput  placeholder="First name"  name="fname"  required>
+              <input type="text" formControlName="name" matInput  placeholder="First name"  name="fname"  required>
            </mat-form-field>
+
+           <div *ngIf="spazaDash.controls.name.invalid && spazaDash.controls.name.dirty">
+          </div>
+          <div class="error" *ngIf="spazaDash.get('name').hasError('minlength') && spazaDash.get('name').touched">
+             Minimum 4 characters
+           </div>
+           <div class="error"  *ngIf="spazaDash.get('name').hasError('maxlength') && spazaDash.get('name').touched">
+               Maximum 30 characters
+             </div>
+
            <mat-form-field class="full-width">
               <mat-label>Last Name</mat-label>
-              <input  matInput  placeholder="Last Name" name="lname"  required>
+              <input  matInput  type="text" formControlName="surname" placeholder="Last Name" name="lname"  required>
            </mat-form-field>
+           <div *ngIf="spazaDash.controls.surname.invalid && spazaDash.controls.surname.dirty">
+          </div>
+          <div class="error" *ngIf="spazaDash.get('surname').hasError('minlength') && spazaDash.get('surname').touched">
+             Minimum 4 characters
+           </div>
+           <div class="error" *ngIf="spazaDash.get('surname').hasError('maxlength') && spazaDash.get('surname').touched">
+               Maximum 30 characters
+             </div>
+
            <mat-form-field class="full-width">
               <mat-label>Address</mat-label>
-              <input  matInput  placeholder="Address" name="address"  required>
+              <input type="text" formControlName="address" matInput placeholder="Address" name="address"  required>
            </mat-form-field>
+           <div *ngIf="spazaDash.controls.address.invalid && spazaDash.controls.address.dirty">
+          </div>
+
            <mat-form-field class="full-width">
               <mat-label>Email</mat-label>
-              <input  matInput  placeholder="Email" name="email">
+              <input  matInput  type="email" formControlName="email" placeholder="Email" name="email">
            </mat-form-field>
+           <div *ngIf="spazaDash.controls.email.invalid && spazaDash.controls.email.dirty">
+          </div>
+          <div class="error" *ngIf="spazaDash.get('email').hasError('required') && spazaDash.get('email').touched">
+           Please input your email
+         </div>
+         <div class="error" *ngIf="spazaDash.get('email').hasError('pattern') && spazaDash.get('email').touched">
+           Email address invalid
+         </div>
+
            <mat-form-field class="full-width">
               <mat-label>Password</mat-label>
-              <input  matInput  placeholder="Password"  name="password">
+              <input  matInput type="password" formControlName="password" placeholder="Password"  name="password">
            </mat-form-field>
-    </form>
-  </mat-card-content>
-  <section class="example-section">
-    <label class="example-margin">Gender:</label>
-    <mat-radio-group [(ngModel)]="gender"><br>
-      <mat-radio-button class="example-margin" value="after">Male</mat-radio-button>
-      <mat-radio-button class="example-margin" value="before">Female</mat-radio-button>
-      <mat-radio-button class="example-margin" value="before">Other</mat-radio-button>
-    </mat-radio-group>
-  </section>
-  <br><br>
-  <mat-card-content>
-    <form class="my-form">
-       <!--FORM FIELDS-->
+           <div *ngIf="spazaDash.controls.password.invalid && spazaDash.controls.password.dirty">
+          </div>
 
-    </form>
+          <div class="error" *ngIf="spazaDash.get('password').hasError('required') && spazaDash.get('password').touched">
+            Please input your password
+          </div>
 
-  </mat-card-content>
+          <div class="error" *ngIf="spazaDash.get('password').hasError('minlength') && spazaDash.get('password').touched">
+            Minimum 6 characters
+          </div>
+
+          <div class="error" *ngIf="spazaDash.get('password').hasError('maxlength') && spazaDash.get('password').touched">
+            Maximum 12 characters
+          </div>
+
+<section  formControlName="gender" class="example-section">
+        <label class="example-margin">Gender:</label>
+        <mat-radio-group  formControlName="gender"><br>
+          <mat-radio-button class="example-margin" value="Male">Male</mat-radio-button>
+          <mat-radio-button class="example-margin" value="Female">Female</mat-radio-button>
+          <mat-radio-button class="example-margin" value="Other">Other</mat-radio-button>
+        </mat-radio-group>
+      </section>
+        <div *ngIf="spazaDash.controls.gender.invalid && spazaDash.controls.gender.dirty">
+        </div>
+        <div class="error" *ngIf="spazaDash.get('gender').hasError('required') && spazaDash.get('gender').touched">
+            Please input your Gender
+          </div>
+      </form>
+</mat-card-content>
+
+
+
+    <!-- <form class="my-form">
+
+
+    </form> -->
+<!-- <mat-card-content>
+  </mat-card-content> -->
 
   <mat-card-actions>
       <div class="mybuutton">
-    <button mat-raised-button (click)="register()" style="color:darkgrey" >REGISTER</button>
+    <button mat-raised-button [disabled]="!spazaDash.valid"  (click)="register()" style="color:darkgrey" >REGISTER</button>
   </div>
   </mat-card-actions>
 

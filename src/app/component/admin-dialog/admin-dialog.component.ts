@@ -1,6 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef, MatDialog, MatDialogConfig} from "@angular/material";
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+
+declare var firebase;
 @Component({
   selector: 'app-admin-dialog',
   templateUrl: './admin-dialog.component.html',
@@ -22,6 +24,12 @@ export class AdminDialogComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  updateSpaza(){
+    firebase.database().ref('/users/'+this.userProfile._key).update({typeOfUser : this.adminForm.value.typeOfUser}).then(result =>{
+      this.close();
+    });
   }
 
   close(){
