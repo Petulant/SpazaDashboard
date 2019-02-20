@@ -2,7 +2,7 @@
   <h1 style="text-align: center"><u>System Users</u></h1>
   <mat-grid-list cols="3" rowHeight="1.6:1">
     <mat-grid-tile *ngFor = "let userProfile of usersProfilesList,  let i = index"> 
-        <mat-card class="card" (click) = "openDialog(userProfile)" >
+        <mat-card class="card">
             <mat-card-header>
                 <!-- <div mat-card-avatar class="example-header-image"></div> -->
                 <mat-card-title>Name : {{ userProfile?.name }} <br>Surname : {{ userProfile?.surname }}</mat-card-title>
@@ -15,7 +15,7 @@
                 Number of Spaza(s) Registered : {{ userProfile?.numberOfSpazas }}
             </mat-card-content>
             <mat-card-actions>
-                <button mat-raised-button style="margin-left: 25%">Change Role</button>
+                <button mat-raised-button (click) = "openDialog(userProfile)" style="margin-left: 30%">Change Role</button>
                 <!-- <button mat-button>SHARE</button> -->
             </mat-card-actions>
         </mat-card>
